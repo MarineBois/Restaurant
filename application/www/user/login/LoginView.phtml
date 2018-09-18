@@ -1,0 +1,21 @@
+<h2>Se connecter avec un compte utilisateur</h2>
+<h3> login test : mail@mail.fr ET Password : admin </h3>
+<?php if (isset($error)) : ?>
+	<aside class="error-message">
+		<h3><i class="fa fa-warning"></i> erreur(s) dans le formulaire !</h3>
+			<p><?= $error ?></p>
+	</aside>
+<?php endif; ?>
+<form method="POST" class="generic-form" action="<?= $requestUrl ?>/user/login">
+	<fieldset>
+		<legend>Informations d'authentification</legend>
+		<label>E-mail :
+			<input type="mail" name="Mail">
+		</label>
+		<label>Mot de Passe :
+			<input type="password" name="Password">
+		</label>
+	</fieldset>
+	<button type="submit" class="button button-primary">Connexion</button>
+	<button type="reset" class="button button-cancel">Annuler</button>
+</form>

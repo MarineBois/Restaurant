@@ -1,0 +1,40 @@
+<h2>Creation d'un compte client</h2>
+
+
+<form method="POST" class="generic-form">
+	<fieldset>
+		<legend>Identité et coordonnées</legend>
+		<label>Nom :
+			<input type="text" name="LastName">
+		</label>
+		<label> Prénom :
+			<input type="text" name="FirstName">
+		</label>
+		<label> Date de Naissance :
+			<input type="date" name="BirthDate">	
+		</label>
+		<label> Adresse :
+			<textarea name="address"></textarea>
+		</label>
+		<label>Ville : 
+			<input type="text" name="city">
+		</label>
+		<label>Code Postal :
+			<input type="text" name="PostalCode">
+		</label>
+		<label>Téléphone :
+			<input type="tel" name="tel">
+		</label>
+	</fieldset>
+	<fieldset>
+		<legend>Informations d'authentification</legend>
+		<label>E-mail :
+			<input type="mail" name="Mail">
+		</label>
+		<label>Mot de Passe :
+			<input type="password" name="Password">
+		</label>
+	</fieldset>
+	<button type="submit" class="button button-primary">Créer le compe</button>
+	<button type="reset" class="button button-cancel">Annuler</button>
+</form>

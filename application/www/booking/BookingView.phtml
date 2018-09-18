@@ -1,0 +1,21 @@
+<h2>Réservation d'une table </h2>
+<?php if (isset($error)) : ?>
+	<aside class="error-message">
+		<h3><i class="fa fa-warning"></i> erreur(s) dans le formulaire !</h3>
+			<p><?= $error ?></p>
+	</aside>
+<?php endif; ?>
+<form method="POST" class="generic-form" action="<?= $requestUrl ?>/booking">
+	<fieldset>
+		<legend>Informations</legend>
+		<label>Darte de réservation :
+			<input type="date" name="BookingDate">
+			<input type="time" min="18:30" max="21:00" step="1800" name="BookingTime">
+		</label>
+		<label>Nombre de couverts :
+			<input type="number" min="1" max="10" name="NumberOfSeats">
+		</label>
+	</fieldset>
+	<button type="submit" class="button button-primary">Réserver</button>
+	<button type="reset" class="button button-cancel">Annuler</button>
+</form>

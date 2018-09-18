@@ -1,0 +1,34 @@
+<h2>Passer une commande </h2>
+
+<form class="generic-form" id="order-form">
+	<input type="hidden name="salePrice">
+	<fieldset>
+		<legend>Ajouter un article</legend>
+		<label for="meals">Nom :</label>
+			<select id="meals" name="meals">
+				<?php foreach ($meals as $meal ) : ?>
+				<option value="<?= $meal["Id"] ?>" id="<?= $meal["Id"] ?>"><?= $meal["Name"] ?></option>
+			<?php endforeach; ?>
+			</select>
+			<article id="meal-details" class="meal-details no-left-label">
+                <img src="" alt="Photo du produit">
+                <p></p>
+                <span>Prix : <strong></strong></span>
+            </article>		
+		<label for="quantity">Quantité :</label>
+            <input id="quantity" class="quantity" type="text" maxlength="2" name="quantity" data-name="Quantité" data-type="positive-integer" data-required>
+	<button class="button button-primary no-left-label" type="submit">Ajouter</button>
+	</fieldset>
+	<fieldset>
+		<legend>Récapitulatif de la commande</legend>
+        <section id="order-summary"></section>
+	</fieldset>
+</form>
+<button id="validate-order" class="button button-primary" disabled>Valider la commande</button>
+<a class="button button-cancel small" href="<?= $requestUrl ?>">Annuler</a>
+
+<!-- Classes de gestion du formulaire de commande -->
+<!-- Ce code JavaScript n'est chargé QUE depuis l'URL /order/payment/success -->
+<script src="<?= $wwwUrl ?>/js/classes/BasketSession.class.js"></script>
+<script src="<?= $wwwUrl ?>/js/classes/OrderForm.class.js"></script>
+
